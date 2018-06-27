@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the MovieProvider provider.
@@ -11,7 +10,14 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class MovieProvider {
 
-  constructor(public http: HttpClient) {
+  private baseApiPath: string = "https://api.themoviedb.org/3/";
+
+  constructor(public http: Http) {
     console.log('Hello MovieProvider Provider');
   }
+
+  getLatestMovies() {
+    return this.http.get(this.baseApiPath+"movie/latest?api_key=f02ebbbc79194aff59bc532576153619");
+  }
+
 }
