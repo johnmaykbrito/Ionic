@@ -14,6 +14,45 @@
 
 
 <ion-content padding>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/john.jpg">
+      </ion-avatar>
+      <h2>{{objeto_feed.titulo}}</h2>
+      <p>{{objeto_feed.data}}</p>
+    </ion-item>
+
+    <img src="../../assets/imgs/advance-card-bttf.png">
+
+    <ion-card-content>
+      <p>{{objeto_feed.descricao}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small (click)="doLike()">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{objeto_feed.qntd_likes}} Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{objeto_feed.qntd_comments}} Comments</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+            {{objeto_feed.time_comment}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
   <button ion-button block color="dark" (click)="doAlert()">{{buttonValue}}</button>
   <button ion-button block (click)="openMenu()">Show Action Sheet</button>
 </ion-content>
